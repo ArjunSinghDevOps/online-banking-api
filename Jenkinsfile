@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'
         jdk 'JDK'
+        maven 'Maven'
     }
 
     stages {
@@ -24,9 +24,9 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     sh '''
-                    mvn sonar:sonar \
-                    -Dsonar.projectKey=online-banking-api \
-                    -Dsonar.projectName=online-banking-api
+                        mvn sonar:sonar \
+                        -Dsonar.projectKey=online-banking-api \
+                        -Dsonar.projectName=online-banking-api
                     '''
                 }
             }
